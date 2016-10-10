@@ -8,11 +8,11 @@ export default class WGLScene extends Scene {
     const gl = twgl.getWebGLContext(canvas);
     this.gl = gl;
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.enable(gl.DEPTH_TEST);
+    // gl.enable(gl.DEPTH_TEST);
 
     const animationFrame = (time) => {
       twgl.resizeCanvasToDisplaySize(gl.canvas);
-      gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+      gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
       // eslint-disable-next-line no-bitwise
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
       this.tick(time);
